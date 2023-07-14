@@ -1,7 +1,10 @@
+import React from "react"
+import { Link } from 'react-router-dom'
+
 function CreateDeckLink() {
     return (
         <>
-            <h2>Link to decks/new</h2>
+            <Link to='/decks/new'>Create Deck</Link>            
         </>
     )
 }
