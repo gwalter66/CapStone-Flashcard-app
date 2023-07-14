@@ -1,12 +1,14 @@
+import React from "react"
+
 import AddCardForm from "./AddCardForm"
 import AddCardNav from "./AddCardNav"
 
-function AddCard() {
+function AddCard({ deck }) {
     return (
         <>
-            <AddCardNav />
-            <h1>Add Card</h1>
-            <AddCardForm />
+            <AddCardNav deck={deck} />
+            <h1>{deck.name}: Add Card</h1>
+            <AddCardForm deck={deck} />
         </>
     )
 }

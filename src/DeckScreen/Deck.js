@@ -45,7 +45,7 @@ function Deck() {
                     </Route>
 
                     <Route path={`${path}/cards/new`}>
-                        <AddCard />
+                        <AddCard deck={deck} />
                     </Route>
 
                     <Route path={`${path}/:cardId/edit`}>

@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "George",
-      "description": "dw",
+      "name": "test deck",
+      "description": "testing functionality\n",
       "id": 3
     }
   ],
@@ -53,6 +53,12 @@
       "back": "b",
       "deckId": 1,
       "id": 7
+    },
+    {
+      "front": "test card front",
+      "back": "test card back",
+      "deckId": 3,
+      "id": 9
     }
   ]
 }
