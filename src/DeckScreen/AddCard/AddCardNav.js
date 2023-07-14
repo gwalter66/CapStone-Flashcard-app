@@ -10,11 +10,11 @@ function AddCardNav({ deck }) {
                 <ol className='breadcrumb'>
 
                     <li className='breadcrumb-item'>
-                        <Link to='home'>Home</Link>
+                        <Link to='/'>Home</Link>
                     </li>
 
                     <li className='breadcrumb-item'>
-                        <Link to={`decks/${deckId}`}>{deck.name}</Link>
+                        <Link to={`/decks/${deckId}`}>{deck.name}</Link>
                     </li>
 
                     <li className='breadcrumb-item current' aria-current='page'>
