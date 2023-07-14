@@ -1,5 +1,7 @@
-import React from "react"
-import { Route, Switch, useRouteMatch, Redirect } from 'react-router-dom'
+import React, { useEffect, useState } from "react"
+import { Route, Switch, useRouteMatch, Redirect, useParams } from 'react-router-dom'
+
+import { readDeck } from "../utils/api"
 
 import DeckPreview from "./DeckPreview/DeckPreview"
 import EditDeck from "./EditDeck/EditDeck"
@@ -9,38 +11,57 @@ import EditCard from "./EditCard/EditCard"
 
 function Deck() {
     const { path } = useRouteMatch()
-    return (
-        <>
-            <h1>Deck Component</h1>
-            <Switch>
+    const { deckId } = useParams()
 
-                <Route exact path={path}>
-                    <DeckPreview />
-                </Route>
+    const [deck, setDeck] = useState({ cards: []})
 
-                <Route path={`${path}/edit`}>
-                    <EditDeck />
-                </Route>
+    const abortController = new AbortController
+    function loadDeck() {
+        readDeck(deckId, abortController.signal).then(setDeck)
+    }
 
-                <Route path={`${path}/study`}>
-                    <StudyDeck />
-                </Route>
+    useEffect(() => {
+        loadDeck()
 
-                <Route path={`${path}/cards/new`}>
-                    <AddCard />
-                </Route>
+        return () => abortController.abort()
+    }, [])
 
-                <Route path={`${path}/:cardId/edit`}>
-                    <EditCard />
-                </Route>
+    if(deck) {
+        return (
+            <>
+                <h1>Deck Component</h1>
+                <Switch>
 
-                <Route>
-                    <Redirect to="/notFound" />
-                </Route>
+                    <Route exact path={path}>
+                        <DeckPreview deck={deck} loadDeck={loadDeck} />
+                    </Route>
 
-            </Switch>
-        </>
-    )
+                    <Route path={`${path}/edit`}>
+                        <EditDeck />
+                    </Route>
+
+                    <Route path={`${path}/study`}>
+                        <StudyDeck />
+                    </Route>
+
+                    <Route path={`${path}/cards/new`}>
+                        <AddCard />
+                    </Route>
+
+                    <Route path={`${path}/:cardId/edit`}>
+                        <EditCard />
+                    </Route>
+
+                    <Route>
+                        <Redirect to="/notFound" />
+                    </Route>
+
+                </Switch>
+            </>
+        )
+    } else {
+        return <h2>Loading!</h2>
+    }
 }
 
 export default Deck

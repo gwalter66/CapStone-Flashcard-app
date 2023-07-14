@@ -2,14 +2,13 @@ import CardList from "./CardList"
 import DeckOverview from "./DeckOverview"
 import DeckPreviewNav from "./DeckPreviewNav"
 
-function DeckPreview() {
+function DeckPreview({ deck, loadDeck }) {
     return (
         <>
-            <h1>Preview the deck</h1>
-            <DeckPreviewNav />
-            <DeckOverview />
+            <DeckPreviewNav deck={deck} />
+            <DeckOverview deck={deck}/>
             <h2>Cards</h2>
-            <CardList />
+            <CardList deck={deck} loadDeck={loadDeck} />
         </>
     )
 }

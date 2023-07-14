@@ -1,10 +1,17 @@
 import CardView from "./CardView"
 
-function CardList() {
+function CardList({ deck, loadDeck }) {
     return (
         <>
-            <p>CardList component</p>
-            <CardView />
+            <ul>
+                {deck.cards.map((card, index) => (
+                    <CardView 
+                        card={card}
+                        key={index}
+                        loadDeck={loadDeck}
+                    />
+                ))}
+            </ul>
         </>
     )
 }
