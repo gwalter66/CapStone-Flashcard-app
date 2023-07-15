@@ -6,9 +6,25 @@ import EditDeckNav from './EditDeckNav'
 function EditDeck({ deck, loadDeck }) {
     return (
         <>
-            <EditDeckNav deck={deck} />
-            <h1>Edit Deck</h1>
-            <EditDeckForm deck={deck} loadDeck={loadDeck}/>
+            <div className='container-fluid'>
+                <div className='row'>
+                    <div className='col'>
+                        <EditDeckNav deck={deck} />
+                    </div>
+                </div>
+
+                    <div className='row'>
+                        <div className='col'>
+                            <h1>Edit Deck</h1>
+                        </div>
+                    </div>
+
+                    <div className='row'>
+                        <div className='col'>
+                            <EditDeckForm deck={deck} loadDeck={loadDeck}/>
+                        </div>
+                    </div>
+                </div>
         </>
     )
 }

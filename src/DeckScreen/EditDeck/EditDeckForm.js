@@ -40,21 +40,21 @@ function EditDeckForm({ deck, loadDeck }) {
         <>
             
             <form onSubmit={handleSubmit}>
-                
-                <label htmlFor="name">
-                    Name 
-                    <input 
-                        type="text"
-                        id='name'
-                        name='name'
-                        required
-                      
-                        value={newDeck.name}
-                        onChange={handleChange}
-                    />
-                </label>
 
-                <br />
+                <div className="form-group">
+                    <label htmlFor="name">
+                        Name 
+                        <input 
+                            type="text"
+                            id='name'
+                            name='name'
+                            required
+                            value={newDeck.name}
+                            onChange={handleChange}
+                            className="form-control"
+                        />
+                    </label>
+                </div>
 
                 <label htmlFor='description'>
                     Description
@@ -64,14 +64,25 @@ function EditDeckForm({ deck, loadDeck }) {
                         required
                         onChange={handleChange}
                         value={newDeck.description}
+                        className="form-control"
                     />
                 </label>
 
-                <br />
+                <div className="form-group">
+                    <Link 
+                        to={`/decks/${deck.id}`}
+                        className='btn btn-secondary mx-1'
+                    >
+                        Cancel
+                    </Link>
+                    <button 
+                        type="submit"
+                        className="btn btn-primary"
+                    >
+                        Submit
+                    </button>
+                </div>
 
-                <Link to={`/decks/${deck.id}`}>Cancel</Link>
-                <button type="submit">Submit</button>
-               
             </form>
         </>
     )
