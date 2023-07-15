@@ -2,7 +2,6 @@ import React from "react"
 
 import CreateDeckLink from "./CreateDeckLink"
 import DeckList from "./DeckList"
-import './Home.css'
 
 function Home() {
     return (
