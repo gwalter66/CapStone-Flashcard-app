@@ -19,12 +19,59 @@ function DeckOverview({ deck }) {
 
     return (
         <>
-            <h2>{deck.name}</h2>
-            <p>{deck.description}</p>
-            <Link to={`${url}/edit`}>Edit</Link>
-            <Link to={`${url}/study`}>Study</Link>
-            <Link to={`${url}/cards/new`}>Add Cards</Link>
-            <button type='delete' onClick={handleDeleteDeck}>Delete</button>
+            <div className="container-fluid m-1">
+
+                <div className="row">
+                    <div className="col">
+                        <h2>{deck.name}</h2>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col">
+                        <p>{deck.description}</p>
+                    </div>
+                </div>
+
+                <div className="row justify-content-between">
+                    <div className="col">
+
+                        <Link 
+                            to={`${url}/edit`}
+                            className='btn btn-secondary'
+                        >
+                            Edit
+                        </Link>
+
+                        <Link 
+                            to={`${url}/study`}
+                            className='btn btn-primary mx-1'
+                        >
+                            Study
+                        </Link>
+
+                        <Link 
+                            to={`${url}/cards/new`}
+                            className='btn btn-primary'
+                        >
+                            Add Cards
+                        </Link>
+
+                    </div>
+                    
+                    <div className="col-1">
+                        <button 
+                            type='delete' 
+                            onClick={handleDeleteDeck}
+                            className="btn btn-danger"
+                        >
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
         </>
     )
 }

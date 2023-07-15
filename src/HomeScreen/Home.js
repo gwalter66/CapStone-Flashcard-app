@@ -10,11 +10,15 @@ function Home() {
             <div className="container-fluid">
 
                 <div className="row">
-                    <CreateDeckLink />  
+                    <div className="col">
+                        <CreateDeckLink />  
+                    </div>
                 </div>
 
                 <div className="row">
-                    <DeckList />
+                    <div className="col">
+                        <DeckList />
+                    </div>
                 </div>
 
             </div>

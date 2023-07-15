@@ -28,14 +28,30 @@ function StudyCardButtons({ front, setFront, setCount, totalCards, count }) {
     if (front) {
         return (
             <>
-                <button onClick={handleFlip}>Flip</button>
+                <button 
+                    onClick={handleFlip}
+                    className="btn btn-secondary"
+                >
+                    Flip
+                </button>
             </>
         )
     } else {
         return (
             <>
-                <button onClick={handleFlip}>Flip</button>
-                <button onClick={handleNext}>Next</button>
+                <button 
+                    onClick={handleFlip}
+                    className="btn btn-secondary mx-1"
+                >
+                    Flip
+                </button>
+
+                <button 
+                    onClick={handleNext}
+                    className="btn btn-primary"
+                >
+                    Next
+                </button>
             </>
         )
     }

@@ -19,12 +19,7 @@ function DeckView({ deck, loadDecks }) {
                 <div className='container card-list'>
                     <li className='home'>
                         <div className='row justify-content-between'>
-
-                            
                                 <h3>{deck.name}</h3>
-                            
-
-                            
                                 <p>{deck.cards.length} cards</p>
                             
                         </div>

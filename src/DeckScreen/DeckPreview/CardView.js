@@ -18,12 +18,35 @@ function CardView({ card, loadDeck }) {
 
     return (
         <>
-            <li>
-                <p>{card.front}</p>
-                <p>{card.back}</p>
-                <Link to={`${url}/cards/${card.id}/edit`}>Edit</Link>
-                <button type='delete' onClick={handleDeleteCard}>Delete</button>
-            </li>
+            <div className="container-fluid card-list">
+                <li>
+
+                    <div className="row">
+                        <p>{card.front}</p>
+                    </div>
+
+                    <div className="row">
+                        <p>{card.back}</p>
+                    </div>
+
+                    <div className="row justify-content-between">
+                        <Link 
+                            to={`${url}/cards/${card.id}/edit`}
+                            className='btn btn-secondary'
+                            >
+                                Edit
+                            </Link>
+                        <button 
+                            type='delete' 
+                            onClick={handleDeleteCard}
+                            className="btn btn-danger"
+                        >
+                            Delete
+                        </button>
+                    </div>
+
+                </li>
+            </div>
         </>
     )
 }

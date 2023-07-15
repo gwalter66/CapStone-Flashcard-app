@@ -21,15 +21,17 @@ function DeckList(){
     return (
         <>
             <div className='row'>
-                <ul>
-                    {decks.map((deck, index) => (
-                        <DeckView
-                            key={index}
-                            deck={deck} 
-                            loadDecks={loadDecks}
-                        />
-                    ))}
-                </ul>
+                <div className='col'>
+                    <ul>
+                        {decks.map((deck, index) => (
+                            <DeckView
+                                key={index}
+                                deck={deck} 
+                                loadDecks={loadDecks}
+                            />
+                        ))}
+                    </ul>
+                </div>
             </div>
         </>
     )
