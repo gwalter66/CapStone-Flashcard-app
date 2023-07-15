@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "test deck",
-      "description": "testing functionality\n",
+      "name": "test edit without logs",
+      "description": "testing edit render without logs ",
       "id": 3
     }
   ],

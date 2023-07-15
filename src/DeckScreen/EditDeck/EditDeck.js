@@ -1,12 +1,14 @@
+import React from 'react'
+
 import EditDeckForm from './EditDeckForm'
 import EditDeckNav from './EditDeckNav'
 
-function EditDeck() {
+function EditDeck({ deck, loadDeck }) {
     return (
         <>
-            <EditDeckNav />
+            <EditDeckNav deck={deck} />
             <h1>Edit Deck</h1>
-            <EditDeckForm />
+            <EditDeckForm deck={deck} loadDeck={loadDeck}/>
         </>
     )
 }

@@ -37,7 +37,7 @@ function Deck() {
                     </Route>
 
                     <Route path={`${path}/edit`}>
-                        <EditDeck />
+                        <EditDeck deck={deck} loadDeck={loadDeck} />
                     </Route>
 
                     <Route path={`${path}/study`}>
