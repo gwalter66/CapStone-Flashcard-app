@@ -6,9 +6,26 @@ import AddCardNav from "./AddCardNav"
 function AddCard({ deck }) {
     return (
         <>
-            <AddCardNav deck={deck} />
-            <h1>{deck.name}: Add Card</h1>
-            <AddCardForm deck={deck} />
+        <div className="containter-fluiid">
+
+                <div className="row">
+                    <div className="col">
+                        <AddCardNav deck={deck} />
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col">
+                        <h1>{deck.name}: Add Card</h1>
+                    </div>
+                </div>
+
+                <div className="row">
+                    <div className="col">
+                        <AddCardForm deck={deck} />
+                    </div>
+                </div>
+            </div>
         </>
     )
 }

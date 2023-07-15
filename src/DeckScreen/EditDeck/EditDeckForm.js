@@ -68,7 +68,6 @@ function EditDeckForm({ deck, loadDeck }) {
                     />
                 </label>
 
-                <div className="form-group">
                     <Link 
                         to={`/decks/${deck.id}`}
                         className='btn btn-secondary mx-1'
@@ -81,8 +80,7 @@ function EditDeckForm({ deck, loadDeck }) {
                     >
                         Submit
                     </button>
-                </div>
-
+            
             </form>
         </>
     )

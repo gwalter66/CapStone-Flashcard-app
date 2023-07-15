@@ -30,36 +30,50 @@ function AddCardForm({ deck }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="front">
-                Front
-                <textarea 
-                    id='front'
-                    name="front"
-                    required
-                    placeholder="Front side of card"
-                    onChange={handleChange}
-                    value={newCard.front}
-                />
-            </label>
 
-            <br />
+            <div className="form-group">
+                <label htmlFor="front">
+                    Front
+                    <textarea 
+                        id='front'
+                        name="front"
+                        required
+                        placeholder="Front side of card"
+                        onChange={handleChange}
+                        value={newCard.front}
+                        className="form-control"
+                    />
+                </label>
+            </div>
 
-            <label htmlFor="back">
-                Back 
-                <textarea 
-                    id='back'
-                    name='back'
-                    required
-                    placeholder="Back Side of Card"
-                    onChange={handleChange}
-                    value={newCard.back}
-                />
-            </label>
+            <div className="form-group">
+                <label htmlFor="back">
+                    Back 
+                    <textarea 
+                        id='back'
+                        name='back'
+                        required
+                        placeholder="Back Side of Card"
+                        onChange={handleChange}
+                        value={newCard.back}
+                        className="form-control"
+                    />
+                </label>
+            </div>
 
-            <br />
+            <Link 
+                to={`/decks/${deckId}`}
+                className='btn btn-secondary mx-1'
+            >
+                Done
+            </Link>
 
-            <Link to={`/decks/${deckId}`}>Done</Link>
-            <button type="submit">Save</button>
+            <button 
+                type="submit"
+                className="btn btn-primary"
+            >
+                Save
+            </button>
         </form>
     )
 }
