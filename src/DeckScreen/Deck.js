@@ -5,7 +5,7 @@ import { readDeck } from "../utils/api"
 
 import DeckPreview from "./DeckPreview/DeckPreview"
 import EditDeck from "./EditDeck/EditDeck"
-import StudyDeck from "../StudyDeck/StudyDeck"
+import StudyDeck from "./StudyDeck/StudyDeck"
 import AddCard from "./AddCard/AddCard"
 import EditCard from "./EditCard/EditCard"
 
@@ -41,7 +41,7 @@ function Deck() {
                     </Route>
 
                     <Route path={`${path}/study`}>
-                        <StudyDeck />
+                        <StudyDeck deck={deck} />
                     </Route>
 
                     <Route path={`${path}/cards/new`}>
