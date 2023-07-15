@@ -29,11 +29,10 @@ function EditCardForm({ deck, loadDeck }) {
     }
 
     
-
     useEffect(() => {
         readCard(cardId).then(setNewCard)
     }, [])
-    
+
     return (
         <>
             <form onSubmit={handleSubmit}>

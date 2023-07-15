@@ -21,7 +21,7 @@ function CardView({ card, loadDeck }) {
             <li>
                 <p>{card.front}</p>
                 <p>{card.back}</p>
-                <Link to={`${url}/${card.id}/edit`}>Edit</Link>
+                <Link to={`${url}/cards/${card.id}/edit`}>Edit</Link>
                 <button type='delete' onClick={handleDeleteCard}>Delete</button>
             </li>
         </>
