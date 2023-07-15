@@ -29,7 +29,6 @@ function Deck() {
     if(deck) {
         return (
             <>
-                <h1>Deck Component</h1>
                 <Switch>
 
                     <Route exact path={path}>

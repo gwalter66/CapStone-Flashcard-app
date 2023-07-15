@@ -1,13 +1,19 @@
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { Link, useHistory, useParams } from 'react-router-dom'
 
-import { updateDeck } from "../../utils/api"
+import { readDeck, updateDeck } from "../../utils/api"
 
 function EditDeckForm({ deck, loadDeck }) {
     const { deckId } = useParams()
     const history = useHistory()
 
-    const [newDeck, setNewDeck] = useState({ ...deck })
+    const initializeUpdateDeck = {
+        name: "",
+        description: "",
+    }
+
+    const [newDeck, setNewDeck] = useState({ ...initializeUpdateDeck })
+    
     
 
     const handleChange = ({ target }) => {
@@ -25,9 +31,16 @@ function EditDeckForm({ deck, loadDeck }) {
             .then(history.push(`/decks/${deckId}`))
     }
 
+    useEffect(() => {
+        readDeck(deckId)
+            .then(setNewDeck)
+    }, [])
+
     return(
         <>
+            
             <form onSubmit={handleSubmit}>
+                
                 <label htmlFor="name">
                     Name 
                     <input 
@@ -35,7 +48,7 @@ function EditDeckForm({ deck, loadDeck }) {
                         id='name'
                         name='name'
                         required
-                        placeholder={deck.name}
+                      
                         value={newDeck.name}
                         onChange={handleChange}
                     />
@@ -49,7 +62,6 @@ function EditDeckForm({ deck, loadDeck }) {
                         id='description'
                         name='description'
                         required
-                        placeholder={deck.description}
                         onChange={handleChange}
                         value={newDeck.description}
                     />
@@ -59,6 +71,7 @@ function EditDeckForm({ deck, loadDeck }) {
 
                 <Link to={`/decks/${deck.id}`}>Cancel</Link>
                 <button type="submit">Submit</button>
+               
             </form>
         </>
     )

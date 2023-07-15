@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "test edit without logs",
-      "description": "testing edit render without logs ",
+      "name": "testing",
+      "description": "fixing preload\n",
       "id": 3
     }
   ],
@@ -55,8 +55,8 @@
       "id": 7
     },
     {
-      "front": "test card front update without logs",
-      "back": "test card back update without logs\n",
+      "front": "test card front update without ",
+      "back": "test card back update without ww\n",
       "deckId": 3,
       "id": 9
     }

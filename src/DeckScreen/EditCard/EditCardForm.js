@@ -7,12 +7,17 @@ function EditCardForm({ deck, loadDeck }) {
     const history = useHistory()
     const { cardId } = useParams()
 
-    const [newCard, setNewCard] = useState([])
+    const initializeUpdatedCard = {
+        front: "",
+        back: "",
+    }
+
+    const [newCard, setNewCard] = useState({ ...initializeUpdatedCard })
 
     const handleChange = ({ target }) => {
         setNewCard({
             ...newCard,
-            [target.name]: target.value
+            [target.name]: target.value,
         })
     }
 
@@ -23,13 +28,12 @@ function EditCardForm({ deck, loadDeck }) {
             .then(history.push(`/decks/${deck.id}`))
     }
 
-    function loadCard() {
-        readCard(cardId).then(setNewCard)
-    }
+    
 
     useEffect(() => {
-        loadCard()
-    },[])
+        readCard(cardId).then(setNewCard)
+    }, [])
+    
     return (
         <>
             <form onSubmit={handleSubmit}>
@@ -39,7 +43,7 @@ function EditCardForm({ deck, loadDeck }) {
                     <textarea 
                         id="front"
                         name='front'
-                        placeholder={newCard.front}
+                        
                         value={newCard.front}
                         onChange={handleChange}
                     />
@@ -52,7 +56,7 @@ function EditCardForm({ deck, loadDeck }) {
                     <textarea 
                         id='back'
                         name='back'
-                        placeholder={newCard.back}
+                        
                         value={newCard.back}
                         onChange={handleChange}
                     />
