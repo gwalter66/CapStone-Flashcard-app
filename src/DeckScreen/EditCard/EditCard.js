@@ -1,12 +1,12 @@
 import EditCardForm from "./EditCardForm"
 import EditCardNav from "./EditCardNav"
 
-function EditCard() {
+function EditCard({ deck, loadDeck }) {
     return (
         <>
-            <EditCardNav />
+            <EditCardNav deck={deck} />
             <h1>Edit Card</h1>
-            <EditCardForm />
+            <EditCardForm deck={deck} loadDeck={loadDeck} />
         </>
     )
 }

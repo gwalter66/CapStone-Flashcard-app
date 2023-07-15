@@ -55,8 +55,8 @@
       "id": 7
     },
     {
-      "front": "test card front",
-      "back": "test card back",
+      "front": "test card front update without logs",
+      "back": "test card back update without logs\n",
       "deckId": 3,
       "id": 9
     }
