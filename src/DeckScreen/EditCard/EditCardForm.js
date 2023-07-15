@@ -37,34 +37,45 @@ function EditCardForm({ deck, loadDeck }) {
         <>
             <form onSubmit={handleSubmit}>
 
-                <label htmlFor="front">
-                    Front 
-                    <textarea 
-                        id="front"
-                        name='front'
-                        
-                        value={newCard.front}
-                        onChange={handleChange}
-                    />
-                </label>
+                <div className="form-group">
+                    <label htmlFor="front">
+                        Front 
+                        <textarea 
+                            id="front"
+                            name='front'
+                            value={newCard.front}
+                            onChange={handleChange}
+                            className="form-control"
+                        />
+                    </label>
+                </div>
 
-                <br />
+                <div className="form-group">
+                    <label htmlFor="back">
+                        Back 
+                        <textarea 
+                            id='back'
+                            name='back'
+                            value={newCard.back}
+                            onChange={handleChange}
+                            className="form-control"
+                        />
+                    </label>
+                </div>
 
-                <label htmlFor="back">
-                    Back 
-                    <textarea 
-                        id='back'
-                        name='back'
-                        
-                        value={newCard.back}
-                        onChange={handleChange}
-                    />
-                </label>
+                <Link 
+                    to={`/decks/${deck.id}`}
+                    className="btn btn-secondary mx-1"
+                >
+                    Cancel
+                </Link>
 
-                <br />
-
-                <Link to={`/decks/${deck.id}`}>Cancel</Link>
-                <button type="submit">Submit</button>
+                <button 
+                    type="submit"
+                    className="btn btn-primary"
+                >
+                    Submit
+                </button>
 
             </form>
         </>
