@@ -33,21 +33,24 @@ function CreateDeckForm() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="name">
-                    Name
-                    <input 
-                        type='text'
-                        id='name'
-                        name='name'
-                        required
-                        placeholder="Deck Name"
-                        value={newDeck.name}
-                        onChange={handleChange}
-                    />
-                </label>
 
-                <br />
+                <div className="form-group">
+                    <label htmlFor="name">
+                        Name
+                        <input 
+                            type='text'
+                            id='name'
+                            name='name'
+                            required
+                            placeholder="Deck Name"
+                            value={newDeck.name}
+                            onChange={handleChange}
+                            className="form-control"
+                        />
+                    </label>
+                </div>
 
+                <div className="form-group">
                 <label htmlFor='description'>
                     Description
                     <textarea 
@@ -57,13 +60,24 @@ function CreateDeckForm() {
                         placeholder="Brief Description of the deck"
                         value={newDeck.description}
                         onChange={handleChange}
+                        className="form-control"
                     />
                 </label>
-
-                <br />
-
-                <Link to='/'>Cancel</Link>
-                <button type='submit'>Submit</button>
+                </div>
+                
+                
+                <Link 
+                    to='/'
+                    className="btn btn-secondary mx-1"
+                >
+                    Cancel
+                </Link>
+                <button 
+                    type='submit'
+                    className="btn btn-primary"
+                >
+                    Submit
+                </button>
             </form>
         </>
     )
