@@ -5,10 +5,10 @@ function CreateDeckLink() {
     return (
         <>
             <Link 
-                className='btn btn-secondary' 
+                className='btn btn-secondary my-2' 
                 to='/decks/new'
             >
-               + Create Deck
+                &#43; Create Deck
             </Link>            
         </>
     )

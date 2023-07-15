@@ -20,16 +20,17 @@ function DeckList(){
 
     return (
         <>
-            <h2>Deck List</h2>
-            <ul>
-                {decks.map((deck, index) => (
-                    <DeckView
-                        key={index}
-                        deck={deck} 
-                        loadDecks={loadDecks}
-                    />
-                ))}
-            </ul>
+            <div className='row'>
+                <ul>
+                    {decks.map((deck, index) => (
+                        <DeckView
+                            key={index}
+                            deck={deck} 
+                            loadDecks={loadDecks}
+                        />
+                    ))}
+                </ul>
+            </div>
         </>
     )
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
 import { deleteDeck } from '../utils/api'
 
 function DeckView({ deck, loadDecks }) {
@@ -17,14 +16,49 @@ function DeckView({ deck, loadDecks }) {
 
         return (
             <>
-                <li>
-                    <h3>{deck.name}</h3>
-                    <p>{deck.description}</p>
-                    <p>{deck.cards.length} cards</p>
-                    <Link to={`/decks/${deck.id}`}>View</Link>
-                    <Link to={`/decks/${deck.id}/study`}>Study</Link>
-                    <button type='delete' onClick={handleDelete}>Delete Deck</button>
-                </li>
+                <div className='container card-list'>
+                    <li className='home'>
+                        <div className='row justify-content-between'>
+
+                            
+                                <h3>{deck.name}</h3>
+                            
+
+                            
+                                <p>{deck.cards.length} cards</p>
+                            
+                        </div>
+
+                        <div className='row'>
+                            <p>{deck.description}</p>
+                        </div>
+
+                        <div className='row justify-content-between'>
+
+                            <div>
+                                <Link 
+                                    to={`/decks/${deck.id}`}
+                                    className='btn btn-secondary'
+                                >
+                                    View
+                                </Link>
+                                <Link 
+                                    to={`/decks/${deck.id}/study`}
+                                    className='btn btn-primary mx-1'
+                                >
+                                    
+                                    Study
+                                </Link>
+                            </div>
+
+                            <div >
+                                <button 
+                                    className='btn btn-danger my-1'
+                                    onClick={handleDelete}>Delete Deck</button>
+                            </div>
+                        </div>
+                    </li>
+                </div>
             </>
         )
     } else {

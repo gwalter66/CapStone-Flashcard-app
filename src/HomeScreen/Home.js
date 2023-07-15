@@ -2,12 +2,22 @@ import React from "react"
 
 import CreateDeckLink from "./CreateDeckLink"
 import DeckList from "./DeckList"
+import './Home.css'
 
 function Home() {
     return (
         <>
-            <CreateDeckLink />
-            <DeckList />
+            <div className="container-fluid">
+
+                <div className="row">
+                    <CreateDeckLink />  
+                </div>
+
+                <div className="row">
+                    <DeckList />
+                </div>
+
+            </div>
         </>
     )
 }
