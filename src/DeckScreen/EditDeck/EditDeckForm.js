@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import { Link, useHistory, useParams } from 'react-router-dom'
 
 import { readDeck, updateDeck } from "../../utils/api"
