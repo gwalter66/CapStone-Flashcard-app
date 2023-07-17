@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "//CapStone-Flashcard-app/static/css/main.870b3b1a.css",
+    "main.js": "//CapStone-Flashcard-app/static/js/main.b894e899.js",
+    "index.html": "//CapStone-Flashcard-app/index.html",
+    "main.870b3b1a.css.map": "//CapStone-Flashcard-app/static/css/main.870b3b1a.css.map",
+    "main.b894e899.js.map": "//CapStone-Flashcard-app/static/js/main.b894e899.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.870b3b1a.css",
+    "static/js/main.b894e899.js"
+  ]
+}
