@@ -3,7 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 
 import { createCard } from "../../utils/api"
 
-function AddCardForm({ deck, loadDeck }) {
+function AddCardForm({ deck }) {
     const {deckId} = useParams()
 
     const initializeNewCard = {
@@ -26,7 +26,6 @@ function AddCardForm({ deck, loadDeck }) {
         const abortController = new AbortController
         createCard(deck.id, newCard, abortController.signal)
             .then(setNewCard({ ... initializeNewCard }))
-            .then(loadDeck)
     }
 
     return (

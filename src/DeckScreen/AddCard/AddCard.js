@@ -3,7 +3,7 @@ import React from "react"
 import AddCardForm from "./AddCardForm"
 import AddCardNav from "./AddCardNav"
 
-function AddCard({ deck, loadDeck }) {
+function AddCard({ deck }) {
     return (
         <>
         <div className="containter-fluiid">
@@ -22,7 +22,7 @@ function AddCard({ deck, loadDeck }) {
 
                 <div className="row">
                     <div className="col">
-                        <AddCardForm deck={deck} loadDeck={loadDeck} />
+                        <AddCardForm deck={deck} />
                     </div>
                 </div>
             </div>
