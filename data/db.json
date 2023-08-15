@@ -61,10 +61,16 @@
       "id": 9
     },
     {
-      "front": "aaaa",
-      "back": "aaaa",
+      "front": "testing editing  a card",
+      "back": "www",
       "deckId": 3,
       "id": 10
+    },
+    {
+      "front": "testing",
+      "back": "adding a card",
+      "deckId": 3,
+      "id": 11
     }
   ]
 }
